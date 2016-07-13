@@ -7,9 +7,6 @@
     "validate-commit-msg": "validate-commit-msg",
     "release": "standard-version"
   },
-  "private": true,
-  "dependencies": {
-  },
   "devDependencies": {
     "ava": "^0.15.2",
     "babel-cli": "^6.7.5",
@@ -20,7 +17,8 @@
     "validate-commit-msg": "^2.6.1",
     "xo": "^0.16.0"
   },
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "MIT",
+  "author": "Tapani Moilanen <moilanen.tapani@gmail.com>",
   "config": {
     "ghooks": {
       "commit-msg": "npm run validate-commit-msg --silent -- $2"

@@ -22,4 +22,6 @@ async function getProfile(req, res) {
 ```
 
 ## License
-MIT (c) Tapani Moilanen
+MIT 
+
+Copyright (c) 2016 Tapani Moilanen

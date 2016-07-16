@@ -7,17 +7,14 @@ test('doesn\'t do anything on succesful promise', async t => {
 	const fn = wrap(async(req, res, next) => {
 		return next(null);
 	});
-	const p = fn(null, null, err => t.falsy(err));
-	t.notThrows(p);
-	return p;
+	t.notThrows(fn(null, null, err => t.falsy(err)));
 });
 
-test('calls next with an error on failed promise', t => {
+test('calls next with an error on failed promise', async t => {
 	t.plan(2);
+	const fakeErr = new Error('hi');
 	const fn = wrap(async() => {
-		throw new Error();
+		throw fakeErr;
 	});
-	const p = fn(null, null, err => t.truthy(err));
-	t.notThrows(p);
-	return p;
+	t.notThrows(fn(null, null, err => t.is(err, fakeErr)));
 });
